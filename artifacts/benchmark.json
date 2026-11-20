@@ -1,0 +1,13 @@
+{
+  "num_envs": 32,
+  "steps": 32,
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "scalar_python_loop_s": 1.0435905000194907,
+  "vmap_scan_s": 0.0017949002794921398,
+  "scalar_steps_per_second": 981.2277900008434,
+  "vmap_scan_steps_per_second": 570505.2317946805,
+  "speedup": 581.419765734713,
+  "note": "Both paths warmed up. Scalar path includes Python dispatch and state slicing. One timing sample."
+}

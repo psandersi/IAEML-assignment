@@ -1,0 +1,157 @@
+{
+  "pid": 15728,
+  "state": "complete",
+  "stages": [
+    {
+      "name": "environment",
+      "command": [
+        "scripts/environment.py"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 0.33045929996296763
+    },
+    {
+      "name": "tests",
+      "command": [
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "--junitxml=artifacts/tests.xml"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 27.57168549997732
+    },
+    {
+      "name": "benchmark",
+      "command": [
+        "src/benchmark.py"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 8.53877400001511
+    },
+    {
+      "name": "train_seed42",
+      "command": [
+        "-u",
+        "src/train.py",
+        "--seed",
+        "42",
+        "--updates",
+        "300",
+        "--out",
+        "artifacts/ppo_seed42"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 184.28174339979887
+    },
+    {
+      "name": "evaluate_seed42",
+      "command": [
+        "-u",
+        "src/evaluate.py",
+        "--checkpoint",
+        "artifacts/ppo_seed42/final.npz",
+        "--episodes",
+        "32"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 92.85661449981853
+    },
+    {
+      "name": "summarize_seed42",
+      "command": [
+        "src/summarize.py"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 3.3879414000548422
+    },
+    {
+      "name": "train_seed43",
+      "command": [
+        "-u",
+        "src/train.py",
+        "--seed",
+        "43",
+        "--updates",
+        "300",
+        "--out",
+        "artifacts/ppo_seed43"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 183.9346624002792
+    },
+    {
+      "name": "evaluate_seed43",
+      "command": [
+        "-u",
+        "src/evaluate.py",
+        "--checkpoint",
+        "artifacts/ppo_seed43/final.npz",
+        "--episodes",
+        "32"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 91.14655070006847
+    },
+    {
+      "name": "summarize_seed43",
+      "command": [
+        "src/summarize.py"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 1.5426159999333322
+    },
+    {
+      "name": "train_seed44",
+      "command": [
+        "-u",
+        "src/train.py",
+        "--seed",
+        "44",
+        "--updates",
+        "300",
+        "--out",
+        "artifacts/ppo_seed44"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 177.0473346998915
+    },
+    {
+      "name": "evaluate_seed44",
+      "command": [
+        "-u",
+        "src/evaluate.py",
+        "--checkpoint",
+        "artifacts/ppo_seed44/final.npz",
+        "--episodes",
+        "32"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 88.56273540016264
+    },
+    {
+      "name": "summarize_seed44",
+      "command": [
+        "src/summarize.py"
+      ],
+      "state": "complete",
+      "exit_code": 0,
+      "elapsed_s": 1.738726300187409
+    }
+  ],
+  "started_utc": "2026-11-20T16:16:22Z",
+  "current_stage": "summarize_seed44",
+  "finished_utc": "2026-11-20T16:30:43Z"
+}

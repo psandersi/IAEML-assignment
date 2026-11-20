@@ -1,0 +1,20 @@
+{
+  "update": 300,
+  "env_steps": 2457600,
+  "elapsed_s": 167.9957285001874,
+  "steps_per_second": 14628.943378148204,
+  "episodes": 9,
+  "mean_return": 30.101226806640625,
+  "success_rate": 0.0,
+  "collision_rate": 0.0,
+  "mean_length": 600.0,
+  "episodes_total": 4132,
+  "successes_total": 0,
+  "collisions_total": 112,
+  "loss": -0.00412544421851635,
+  "policy_loss": -0.0003720332169905305,
+  "value_loss": 0.0005625875201076269,
+  "latent_entropy": 0.8069408535957336,
+  "approx_kl": 0.001140148495323956,
+  "clip_fraction": 0.00396728515625
+}

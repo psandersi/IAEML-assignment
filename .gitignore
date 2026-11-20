@@ -1,1 +1,7 @@
-*__pycache__
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+logs/
+artifacts/**/checkpoint_*.npz
+artifacts/**/resume.npz
