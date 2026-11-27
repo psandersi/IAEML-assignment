@@ -109,3 +109,11 @@ def test_seeded_reset_and_vectorization(scene):
     expected = step(p, single)
     np.testing.assert_allclose(result[0].as_vector()[0], expected[0].as_vector(), atol=1e-6)
 
+
+def test_stationary_guided_policy_pays_time_cost(scene):
+    p, state = scene
+    _, _, reward, done, info = step(replace(p, progress_reward=True), state)
+    assert not bool(done)
+    assert float(info["shaping"]) == pytest.approx(0.)
+    assert float(reward) == pytest.approx(-0.015)
+

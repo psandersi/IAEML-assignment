@@ -34,6 +34,12 @@ class PPOConfig:
     map_id: int = 0
     dynamic_speed: float = 0.7
     max_steps: int = 600
+    guided: bool = False
+    reward_control: str = ""
+
+    @property
+    def progress_reward(self):
+        return self.guided or self.reward_control == "progress"
 
 
 def init_network(key, obs_dim=39, hidden=64):

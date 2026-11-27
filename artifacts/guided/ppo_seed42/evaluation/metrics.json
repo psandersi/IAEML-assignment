@@ -1,0 +1,316 @@
+{
+  "checkpoint": "artifacts\\guided\\ppo_seed42\\best.npz",
+  "checkpoint_metadata": {
+    "config": {
+      "seed": 42,
+      "num_envs": 64,
+      "rollout_steps": 128,
+      "updates": 100,
+      "epochs": 4,
+      "minibatches": 8,
+      "hidden_size": 64,
+      "learning_rate": 0.0003,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_eps": 0.2,
+      "value_coef": 0.5,
+      "entropy_coef": 0.005,
+      "max_grad_norm": 0.5,
+      "map_id": 0,
+      "dynamic_speed": 0.7,
+      "max_steps": 600,
+      "guided": true
+    },
+    "update": 70,
+    "env_steps": 573440,
+    "format": "robotaxi-policy-v1",
+    "jax_version": "0.9.2"
+  },
+  "results": [
+    {
+      "map_id": 0,
+      "policy": "random",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_return": -16.626123428344727,
+      "std_return": 1.7799232006072998,
+      "mean_length": 133.96875,
+      "mean_final_distance": 38.33667755126953,
+      "evaluation_wall_s_including_compile": 1.4212111998349428
+    },
+    {
+      "map_id": 0,
+      "policy": "heuristic",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 32,
+      "success_rate": 1.0,
+      "success_wilson95": [
+        0.8928172849426366,
+        1.0
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_return": 77.59252166748047,
+      "std_return": 0.1196109727025032,
+      "mean_length": 294.96875,
+      "mean_final_distance": 1.1698293685913086,
+      "evaluation_wall_s_including_compile": 1.3186284000985324
+    },
+    {
+      "map_id": 0,
+      "policy": "untrained",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 1.0,
+      "mean_return": -9.000120162963867,
+      "std_return": 8.867056021699682e-05,
+      "mean_length": 600.0,
+      "mean_final_distance": 42.01127624511719,
+      "evaluation_wall_s_including_compile": 1.3584322002716362
+    },
+    {
+      "map_id": 0,
+      "policy": "ppo",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 32,
+      "success_rate": 1.0,
+      "success_wilson95": [
+        0.8928172849426366,
+        1.0
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_return": 78.9661865234375,
+      "std_return": 0.11903474479913712,
+      "mean_length": 211.75,
+      "mean_final_distance": 1.0357310771942139,
+      "evaluation_wall_s_including_compile": 1.2727449000813067
+    },
+    {
+      "map_id": 0,
+      "policy": "imitation",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 32,
+      "success_rate": 1.0,
+      "success_wilson95": [
+        0.8928172849426366,
+        1.0
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_return": 77.69956970214844,
+      "std_return": 0.12255671620368958,
+      "mean_length": 292.03125,
+      "mean_final_distance": 1.1213829517364502,
+      "evaluation_wall_s_including_compile": 1.3609791002236307
+    },
+    {
+      "map_id": 1,
+      "policy": "random",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_return": -16.626123428344727,
+      "std_return": 1.7799232006072998,
+      "mean_length": 133.96875,
+      "mean_final_distance": 38.33667755126953,
+      "evaluation_wall_s_including_compile": 1.1054792003706098
+    },
+    {
+      "map_id": 1,
+      "policy": "heuristic",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 32,
+      "success_rate": 1.0,
+      "success_wilson95": [
+        0.8928172849426366,
+        1.0
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_return": 77.59252166748047,
+      "std_return": 0.1196109727025032,
+      "mean_length": 294.96875,
+      "mean_final_distance": 1.1698293685913086,
+      "evaluation_wall_s_including_compile": 1.422950599808246
+    },
+    {
+      "map_id": 1,
+      "policy": "untrained",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 1.0,
+      "mean_return": -9.000120162963867,
+      "std_return": 8.867056021699682e-05,
+      "mean_length": 600.0,
+      "mean_final_distance": 42.01127624511719,
+      "evaluation_wall_s_including_compile": 1.4509876002557576
+    },
+    {
+      "map_id": 1,
+      "policy": "ppo",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 32,
+      "success_rate": 1.0,
+      "success_wilson95": [
+        0.8928172849426366,
+        1.0
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_return": 78.92195892333984,
+      "std_return": 0.13407449424266815,
+      "mean_length": 211.5,
+      "mean_final_distance": 1.0750365257263184,
+      "evaluation_wall_s_including_compile": 1.334881099872291
+    },
+    {
+      "map_id": 1,
+      "policy": "imitation",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 32,
+      "success_rate": 1.0,
+      "success_wilson95": [
+        0.8928172849426366,
+        1.0
+      ],
+      "collision_rate": 0.0,
+      "timeout_rate": 0.0,
+      "mean_return": 77.67251586914062,
+      "std_return": 0.0978972390294075,
+      "mean_length": 292.15625,
+      "mean_final_distance": 1.1546647548675537,
+      "evaluation_wall_s_including_compile": 1.3583804001100361
+    },
+    {
+      "map_id": 2,
+      "policy": "random",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 0.9375,
+      "timeout_rate": 0.0625,
+      "mean_return": -12.493812561035156,
+      "std_return": 6.247475624084473,
+      "mean_length": 275.0,
+      "mean_final_distance": 28.883501052856445,
+      "evaluation_wall_s_including_compile": 1.2833667998202145
+    },
+    {
+      "map_id": 2,
+      "policy": "heuristic",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_return": -9.913925170898438,
+      "std_return": 0.13508667051792145,
+      "mean_length": 60.53125,
+      "mean_final_distance": 32.70069885253906,
+      "evaluation_wall_s_including_compile": 1.421072999946773
+    },
+    {
+      "map_id": 2,
+      "policy": "untrained",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_return": -27.29025650024414,
+      "std_return": 0.01985662616789341,
+      "mean_length": 486.03125,
+      "mean_final_distance": 43.66889572143555,
+      "evaluation_wall_s_including_compile": 1.3420512001030147
+    },
+    {
+      "map_id": 2,
+      "policy": "ppo",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_return": -10.013530731201172,
+      "std_return": 0.13845045864582062,
+      "mean_length": 42.5625,
+      "mean_final_distance": 33.07960510253906,
+      "evaluation_wall_s_including_compile": 1.4291185000911355
+    },
+    {
+      "map_id": 2,
+      "policy": "imitation",
+      "episodes": 32,
+      "evaluation_seed": 20261120,
+      "successes": 0,
+      "success_rate": 0.0,
+      "success_wilson95": [
+        0.0,
+        0.1071827150573635
+      ],
+      "collision_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_return": -10.00599193572998,
+      "std_return": 0.12224414199590683,
+      "mean_length": 59.1875,
+      "mean_final_distance": 32.816856384277344,
+      "evaluation_wall_s_including_compile": 1.6347260000184178
+    }
+  ]
+}

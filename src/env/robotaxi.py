@@ -38,6 +38,7 @@ class RobotaxiParams:
     map_scale: float = 3.0
     dynamic_speed: float = 0.7
     reset_noise: float = 0.15
+    progress_reward: bool = False
 
 
 class RobotaxiState(BaseEnvState):
@@ -283,6 +284,10 @@ class RobotaxiEnv(BaseEnv):
         shaping = 0.99*phi_next-RobotaxiEnv._potential(s)
         reward = (shaping-0.01-0.002*jnp.sum(action**2)
                   +20.*success-20.*collision)
+        if p.progress_reward:
+            target = RobotaxiEnv._local_target(s, p)
+            shaping = jnp.linalg.norm(target-s.agent_pos)-jnp.linalg.norm(target-pos)
+            reward = shaping - 0.015 - 0.002*jnp.sum(action**2) + 25.*success - 20.*collision
         new = eqx.tree_at(lambda z: z.episode_return, new, s.episode_return+reward)
         # Terminal states are absorbing. The trainer resets explicitly.
         new = jax.tree.map(lambda a, b: jnp.where(s.done, a, b), s, new)

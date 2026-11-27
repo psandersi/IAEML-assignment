@@ -24,7 +24,7 @@ def wilson(success, count):
 
 def run_evaluation(params, config, map_id, policy, episodes, seed):
     ep, initial = RobotaxiEnv.init_params(jax.random.PRNGKey(seed), map_id=map_id,
-        max_steps=config.max_steps, dynamic_speed=config.dynamic_speed)
+        max_steps=config.max_steps, dynamic_speed=config.dynamic_speed, progress_reward=config.progress_reward)
     reset = jax.vmap(lambda k: RobotaxiEnv.reset(k, ep, initial))
     step = jax.vmap(lambda k, s, a: RobotaxiEnv.step(k, s, a, ep))
     @jax.jit
@@ -124,10 +124,13 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     untrained, _, _ = load_checkpoint(args.checkpoint.parent/"untrained.npz")
     rows = []
+    policies = {"random": untrained, "heuristic": untrained, "untrained": untrained, "ppo": params}
+    if config.guided:
+        policies["imitation"], _, _ = load_checkpoint(args.checkpoint.parent/"imitation.npz")
     for map_id in args.maps:
-        for policy in ("random", "heuristic", "untrained", "ppo"):
+        for policy, weights in policies.items():
             row, results, trajectory, ep, initial = run_evaluation(
-                untrained if policy == "untrained" else params, config,
+                weights, config,
                 map_id, policy, args.episodes, args.seed)
             rows.append(row)
             name = f"map{map_id}_{policy}"
